@@ -300,7 +300,9 @@ const message = function (city, countryName) {
 const whereAmI = function (lat, long) {
   getWhereAmI(
     `https://geocode.xyz/${lat},${long}?geoit=json&auth=3678396061144699796x114419`
-  ).then(response => message(response.city, response.country));
+  )
+    .then(response => message(response.city, response.country))
+    .catch();
 };
 
 whereAmI(52.508, 13.381);
